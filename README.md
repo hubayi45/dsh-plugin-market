@@ -3,6 +3,9 @@
 这是一份符合 DeepSeek Harness「插件市场索引格式 1」的索引文件，用 GitHub Pages 托管后，
 可以直接在 DSH 的 **插件 → Discover（发现）→ 索引源** 里添加使用。
 
+- 线上索引：<https://hubayi45.github.io/dsh-plugin-market/index.json>
+- 代码仓库：<https://github.com/hubayi45/dsh-plugin-market>
+
 - `index.json` — 商店本体：索引标题、分类、标签，以及每个插件的版本与安装来源（npm / git）。
 - `icons/` — 卡片图标（相对路径，按索引 URL 解析）。
 - `scripts/validate.mjs` — 用官方校验器验证索引格式。
@@ -12,7 +15,7 @@
 
 1. 打开 DSH 侧边栏的 **插件（Plugins）** → **Discover（发现）** 标签。
 2. 点 **添加索引源 / Index sources**，填入索引地址：
-   - 线上：`https://<你的 GitHub 用户名>.github.io/dsh-plugin-market/index.json`
+   - 线上：`https://hubayi45.github.io/dsh-plugin-market/index.json`
    - 本地预览：`http://127.0.0.1:8899/index.json`
 3. 选中该索引后即可按分类、标签浏览条目，打开详情页安装。
 
@@ -22,7 +25,7 @@
 
 ```powershell
 npm install
-npm run validate -- index.json https://<用户名>.github.io/dsh-plugin-market/index.json
+npm run validate -- index.json https://hubayi45.github.io/dsh-plugin-market/index.json
 npm run serve          # http://127.0.0.1:8899/index.json
 ```
 
@@ -73,7 +76,7 @@ npm run serve          # http://127.0.0.1:8899/index.json
 
 1. 建一个公开仓库（例如 `dsh-plugin-market`），把本目录推上去（默认分支 `main`）。
 2. 仓库 **Settings → Pages**：Source 选 **Deploy from a branch**，分支 `main`、目录 `/ (root)`，保存。
-3. 一两分钟后访问 `https://<用户名>.github.io/dsh-plugin-market/index.json`，能返回本文件即成功。
+3. 一两分钟后访问 `https://hubayi45.github.io/dsh-plugin-market/index.json`，能返回本文件即成功。
 4. 仓库根目录已有 `.nojekyll`，可避免 Pages 的 Jekyll 处理忽略以下划线开头的文件。
 
 ## 更新内容
