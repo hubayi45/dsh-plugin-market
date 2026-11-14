@@ -1,0 +1,14 @@
+{
+  "name": "dsh-plugin-market",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A DeepSeek Harness plugin market index (format 1), served from GitHub Pages.",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate.mjs index.json",
+    "serve": "node scripts/serve.mjs"
+  },
+  "devDependencies": {
+    "@deepseek-ai/dsh-plugin-market-index": "0.2.2-rc.3"
+  }
+}

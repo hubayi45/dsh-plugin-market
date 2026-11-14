@@ -1,0 +1,358 @@
+{
+  "format": 1,
+  "title": {
+    "en": "Daily Work Plugin Store",
+    "zh": "日常工作插件商店"
+  },
+  "description": {
+    "en": "A curated catalog of DeepSeek Harness plugins: installable subagent providers and the built-in optional features worth knowing.",
+    "zh": "精选的 DeepSeek Harness 插件目录：可直接安装的子代理提供者，以及值得了解的内置可选功能。"
+  },
+  "metadata": {
+    "categories": {
+      "installable": {
+        "title": { "en": "Installable", "zh": "可安装" }
+      },
+      "builtin": {
+        "title": { "en": "Built-in optional", "zh": "内置可选" }
+      }
+    },
+    "labels": {
+      "subagent": { "title": { "en": "Subagent", "zh": "子代理" } },
+      "terminal": { "title": { "en": "Terminal", "zh": "终端" } },
+      "session": { "title": { "en": "Session", "zh": "会话" } },
+      "workflow": { "title": { "en": "Workflow", "zh": "工作流" } },
+      "ui": { "title": { "en": "Interface", "zh": "界面" } },
+      "tools": { "title": { "en": "Tools", "zh": "工具" } },
+      "git": { "title": { "en": "Git", "zh": "Git" } },
+      "collaboration": { "title": { "en": "Collaboration", "zh": "协作" } },
+      "experimental": { "title": { "en": "Experimental", "zh": "实验性" } }
+    }
+  },
+  "plugins": [
+    {
+      "name": "@deepseek-ai/dsh-subagent-claude-code",
+      "title": { "en": "Claude Code subagent", "zh": "Claude Code 子代理" },
+      "description": {
+        "en": "One-shot Claude Code subagent provider over the official Agent SDK. Requires the Claude Code CLI on this machine.",
+        "zh": "把一次性任务交给本机已安装的 Claude Code 执行（基于官方 Agent SDK），适合让外部代理处理独立子任务。需要本机已装 Claude Code CLI。"
+      },
+      "icon": "icons/subagent.svg",
+      "author": "DeepSeek",
+      "homepage": "https://github.com/deepseek-ai/deepseek-harness",
+      "metadata": {
+        "category": "installable",
+        "labels": ["subagent", "tools"],
+        "keywords": ["claude code", "subagent", "claude", "delegate", "agent sdk"]
+      },
+      "versions": [
+        {
+          "version": "0.2.2-rc.3",
+          "publishTimestamp": 1794556729,
+          "source": { "type": "npm" },
+          "engines": { "dsh": "^0.2.2-rc.3" }
+        }
+      ]
+    },
+    {
+      "name": "@deepseek-ai/dsh-subagent-codex",
+      "title": { "en": "Codex subagent", "zh": "Codex 子代理" },
+      "description": {
+        "en": "One-shot Codex subagent provider over the official app-server protocol. Requires the Codex CLI on this machine.",
+        "zh": "把一次性任务交给本机已安装的 Codex 执行（基于官方 app-server 协议），适合让外部代理处理独立子任务。需要本机已装 Codex CLI。"
+      },
+      "icon": "icons/subagent.svg",
+      "author": "DeepSeek",
+      "homepage": "https://github.com/deepseek-ai/deepseek-harness",
+      "metadata": {
+        "category": "installable",
+        "labels": ["subagent", "tools"],
+        "keywords": ["codex", "subagent", "delegate", "app-server"]
+      },
+      "versions": [
+        {
+          "version": "0.2.2-rc.3",
+          "publishTimestamp": 1794556919,
+          "source": { "type": "npm" },
+          "engines": { "dsh": "^0.2.2-rc.3" }
+        }
+      ]
+    },
+    {
+      "name": "@deepseek-ai/dsh-experimental-terminal-bundle",
+      "title": { "en": "Persistent terminals", "zh": "持久终端" },
+      "description": {
+        "en": "Let the agent run long-lived commands in terminals you can watch in the sidebar.",
+        "zh": "为智能体提供以侧栏标签页打开的终端，你可以旁观，也可以直接在其中键入来接管。进程在多次工具调用之间持续运行，因此它可以启动开发服务器或 REPL，稍后再读取输出；它也能读取你自己打开的终端。"
+      },
+      "icon": "icons/terminal.svg",
+      "author": "DeepSeek",
+      "homepage": "https://github.com/deepseek-ai/deepseek-harness",
+      "metadata": {
+        "category": "builtin",
+        "labels": ["terminal", "experimental"],
+        "keywords": ["terminal", "pty", "shell", "后台进程", "服务器"]
+      },
+      "versions": [
+        {
+          "version": "0.2.2-rc.3",
+          "publishTimestamp": 1794556522,
+          "source": { "type": "npm" }
+        }
+      ]
+    },
+    {
+      "name": "@deepseek-ai/dsh-experimental-session-search",
+      "title": { "en": "Session search", "zh": "会话搜索" },
+      "description": {
+        "en": "Give agents tools to search and read earlier sessions from the current workspace.",
+        "zh": "询问以往的工作，例如“上周我们是怎么修好连接池泄漏的？”，智能体会搜索同一工作区的历史会话来回答。"
+      },
+      "icon": "icons/search.svg",
+      "author": "DeepSeek",
+      "homepage": "https://github.com/deepseek-ai/deepseek-harness",
+      "metadata": {
+        "category": "builtin",
+        "labels": ["session", "tools", "experimental"],
+        "keywords": ["search", "history", "session", "历史会话", "检索"]
+      },
+      "versions": [
+        {
+          "version": "0.2.2-rc.3",
+          "publishTimestamp": 1794556606,
+          "source": { "type": "npm" }
+        }
+      ]
+    },
+    {
+      "name": "@deepseek-ai/dsh-experimental-ralph-bundle",
+      "title": { "en": "Ralph loop", "zh": "Ralph 循环" },
+      "description": {
+        "en": "Run explicitly requested repeated work with fresh agents.",
+        "zh": "要求用 Ralph 循环完成一个目标后，智能体会一轮接一轮地启动新的智能体处理它，直到目标达成、报告受阻或达到轮次上限。"
+      },
+      "icon": "icons/workflow.svg",
+      "author": "DeepSeek",
+      "homepage": "https://github.com/deepseek-ai/deepseek-harness",
+      "metadata": {
+        "category": "builtin",
+        "labels": ["workflow", "experimental"],
+        "keywords": ["ralph", "loop", "repeat", "循环", "迭代"]
+      },
+      "versions": [
+        {
+          "version": "0.2.2-rc.3",
+          "publishTimestamp": 1794556486,
+          "source": { "type": "npm" }
+        }
+      ]
+    },
+    {
+      "name": "@deepseek-ai/dsh-experimental-badge-skill-bundle",
+      "title": { "en": "DSH badge skill", "zh": "DSH 徽章技能" },
+      "description": {
+        "en": "Let agents add a “powered by dsh” badge to documents, pull requests, and other outputs.",
+        "zh": "让 Agent 为文档、PR 等产出添加「powered by dsh」徽章。"
+      },
+      "icon": "icons/ui.svg",
+      "author": "DeepSeek",
+      "homepage": "https://github.com/deepseek-ai/deepseek-harness",
+      "metadata": {
+        "category": "builtin",
+        "labels": ["ui", "experimental"],
+        "keywords": ["badge", "徽章", "skill", "文档"]
+      },
+      "versions": [
+        {
+          "version": "0.2.2-rc.3",
+          "publishTimestamp": 1794556474,
+          "source": { "type": "npm" }
+        }
+      ]
+    },
+    {
+      "name": "@deepseek-ai/dsh-experimental-session-titles-bundle",
+      "title": { "en": "Live-updating titles", "zh": "随对话更新的标题" },
+      "description": {
+        "en": "Refresh session titles as new human prompts arrive.",
+        "zh": "根据你的所有消息生成会话标题，并在主要任务变化时更新，而不是只根据第一条消息生成。"
+      },
+      "icon": "icons/ui.svg",
+      "author": "DeepSeek",
+      "homepage": "https://github.com/deepseek-ai/deepseek-harness",
+      "metadata": {
+        "category": "builtin",
+        "labels": ["session", "ui", "experimental"],
+        "keywords": ["title", "名称", "标题", "session"]
+      },
+      "versions": [
+        {
+          "version": "0.2.2-rc.3",
+          "publishTimestamp": 1794556522,
+          "source": { "type": "npm" }
+        }
+      ]
+    },
+    {
+      "name": "@deepseek-ai/dsh-experimental-inspector-profile",
+      "title": { "en": "Developer tools", "zh": "开发者工具" },
+      "description": {
+        "en": "Optional Web bundle for raw Session logs and Chat node inspection.",
+        "zh": "用于排查问题：在「会话数据诊断」中查看 DSH 为会话记录的内容，在「统计」页签查看每轮/每步的上下文、耗时、缓存和工具成本，并在 Chrome DevTools 中调试 DSH 后端。"
+      },
+      "icon": "icons/tools.svg",
+      "author": "DeepSeek",
+      "homepage": "https://github.com/deepseek-ai/deepseek-harness",
+      "metadata": {
+        "category": "builtin",
+        "labels": ["tools", "experimental"],
+        "keywords": ["inspector", "debug", "诊断", "统计", "devtools"]
+      },
+      "versions": [
+        {
+          "version": "0.2.2-rc.3",
+          "publishTimestamp": 1794556505,
+          "source": { "type": "npm" }
+        }
+      ]
+    },
+    {
+      "name": "@deepseek-ai/dsh-experimental-forge-bundle",
+      "title": { "en": "Change requests and worktrees", "zh": "变更请求与工作树" },
+      "description": {
+        "en": "Experimental change request panel and worktree option for Sessions in Git repositories.",
+        "zh": "在会话侧栏集中跟踪关联的 GitHub PR：查看检查状态、评审意见与代码差异，并把修改建议交给智能体继续处理。也可查看本地改动，用独立工作树隔离任务。GitHub 功能需要本机安装 gh 并登录。"
+      },
+      "icon": "icons/git.svg",
+      "author": "DeepSeek",
+      "homepage": "https://github.com/deepseek-ai/deepseek-harness",
+      "metadata": {
+        "category": "builtin",
+        "labels": ["git", "collaboration", "experimental"],
+        "keywords": ["pull request", "pr", "worktree", "gh", "变更请求"]
+      },
+      "versions": [
+        {
+          "version": "0.2.2-rc.3",
+          "publishTimestamp": 1794556436,
+          "source": { "type": "npm" }
+        }
+      ]
+    },
+    {
+      "name": "@deepseek-ai/dsh-experimental-voice-input-bundle",
+      "title": { "en": "Voice input", "zh": "语音输入" },
+      "description": {
+        "en": "Experimental voice input with local SenseVoice; downloads its runtime on first use.",
+        "zh": "在本机使用 SenseVoice 转写录音，首次使用需安装依赖。"
+      },
+      "icon": "icons/ui.svg",
+      "author": "DeepSeek",
+      "homepage": "https://github.com/deepseek-ai/deepseek-harness",
+      "metadata": {
+        "category": "builtin",
+        "labels": ["ui", "experimental"],
+        "keywords": ["voice", "speech", "语音", "听写", "sensevoice"]
+      },
+      "versions": [
+        {
+          "version": "0.2.2-rc.3",
+          "publishTimestamp": 1794556622,
+          "source": { "type": "npm" }
+        }
+      ]
+    },
+    {
+      "name": "@deepseek-ai/dsh-experimental-cot-translation-bundle",
+      "title": { "en": "Reasoning translation", "zh": "思考过程机器翻译" },
+      "description": {
+        "en": "Experimental machine translation of expanded reasoning.",
+        "zh": "智能体输出时，把展开的“思考”行翻译成你选择的语言，点击“查看原文”可切换回原文。"
+      },
+      "icon": "icons/ui.svg",
+      "author": "DeepSeek",
+      "homepage": "https://github.com/deepseek-ai/deepseek-harness",
+      "metadata": {
+        "category": "builtin",
+        "labels": ["ui", "experimental"],
+        "keywords": ["translation", "reasoning", "翻译", "思考"]
+      },
+      "versions": [
+        {
+          "version": "0.2.2-rc.3",
+          "publishTimestamp": 1794556458,
+          "source": { "type": "npm" }
+        }
+      ]
+    },
+    {
+      "name": "@deepseek-ai/dsh-experimental-auto-review",
+      "title": { "en": "Auto authorization review", "zh": "自动授权审查" },
+      "description": {
+        "en": "Per-tool LLM authorization review for the DeepSeek Harness Auto permission preset.",
+        "zh": "提供“自动审查”访问模式：每次工具调用前，由模型对照你的要求检查，获准的调用立即运行，被拒绝的调用等你审批。"
+      },
+      "icon": "icons/tools.svg",
+      "author": "DeepSeek",
+      "homepage": "https://github.com/deepseek-ai/deepseek-harness",
+      "metadata": {
+        "category": "builtin",
+        "labels": ["tools", "experimental"],
+        "keywords": ["review", "approval", "permission", "授权", "审查"]
+      },
+      "versions": [
+        {
+          "version": "0.2.2-rc.3",
+          "publishTimestamp": 1794556435,
+          "source": { "type": "npm" }
+        }
+      ]
+    },
+    {
+      "name": "@deepseek-ai/dsh-experimental-liveshare",
+      "title": { "en": "LiveShare sessions", "zh": "LiveShare 会话分享" },
+      "description": {
+        "en": "Opt-in LiveShare host bundle: share a Session through a separate Relay at the view or bounded-write tier, with forking and attachment uploads as independent switches.",
+        "zh": "把当前会话分享给同事，对方可在浏览器中驱动该会话、在分享允许写入时修改授权工作区内的文件，或从已完成历史分支出自己的会话。"
+      },
+      "icon": "icons/collaboration.svg",
+      "author": "DeepSeek",
+      "homepage": "https://github.com/deepseek-ai/deepseek-harness",
+      "metadata": {
+        "category": "builtin",
+        "labels": ["collaboration", "experimental"],
+        "keywords": ["liveshare", "share", "分享", "协作", "relay"]
+      },
+      "versions": [
+        {
+          "version": "0.2.2-rc.3",
+          "publishTimestamp": 1794556545,
+          "source": { "type": "npm" }
+        }
+      ]
+    },
+    {
+      "name": "@deepseek-ai/dsh-experimental-tool-worktree",
+      "title": { "en": "Git worktrees", "zh": "Git 工作树" },
+      "description": {
+        "en": "Model tool that creates and enters a new Git worktree.",
+        "zh": "要求在新分支上工作时，智能体会创建单独的 Git 工作树并在其中继续，你当前的工作树保持原样。"
+      },
+      "icon": "icons/git.svg",
+      "author": "DeepSeek",
+      "homepage": "https://github.com/deepseek-ai/deepseek-harness",
+      "metadata": {
+        "category": "builtin",
+        "labels": ["git", "tools", "experimental"],
+        "keywords": ["worktree", "git", "分支", "工作树"]
+      },
+      "versions": [
+        {
+          "version": "0.2.2-rc.3",
+          "publishTimestamp": 1794556604,
+          "source": { "type": "npm" }
+        }
+      ]
+    }
+  ]
+}
